@@ -1,1 +1,74 @@
+1. Write a program to find whether a given year is a leap year or not.
 
+
+function isLeapYear(year) {
+  if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+    return true;
+  } 
+else {
+    return false;
+  }
+}
+const yearToCheck = 2024;
+if (isLeapYear(year to check)) {
+  console.log(year to check + " is a leap year.");
+} else {
+  console.log(year to check + " is not a leap year.");
+}
+
+
+
+
+
+2. Write a JavaScript program to convert temperatures to and from Celsius,
+Fahrenheit.
+[ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in
+Fahrenheit ]
+Expected Output :
+60°C is 140 °F
+45°F is 7.222222222222222°C
+
+function celsiusToFahrenheit(celsius) {
+  const fahrenheit = (celsius * 9/5) + 32;
+  return Fahrenheit;
+}
+
+function fahrenheitToCelsius(fahrenheit) {
+  const celsius = (fahrenheit - 32) * 5/9;
+  return celsius;
+}
+
+// Convert Celsius to Fahrenheit
+const celsiusValue = 60;
+const fahrenheitResult = celsiusToFahrenheit(celsiusValue);
+console.log(celsiusValue + "°C is " + fahrenheitResult + "°F");
+
+// Convert Fahrenheit to Celsius
+const fahrenheitValue = 45;
+const celsiusResult = fahrenheitToCelsius(fahrenheitValue);
+console.log(fahrenheitValue + "°F is " + celsiusResult + "°C");
+
+
+
+
+
+
+3. Write a program to find the factorial of a number.
+
+
+function factorial(number) {
+  if (number < 0) {
+    return "Factorial is not defined for negative numbers";
+  } else if (number === 0 || number === 1) {
+    return 1;
+  } else {
+    let result = 1;
+    for (let i = 2; i <= number; i++) {
+      result *= i;
+    }
+    return result;
+  }
+}
+const num = 5;
+const result = factorial(num);
+console.log(`The factorial of ${num} is ${result}`);
