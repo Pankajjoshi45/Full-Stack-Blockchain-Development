@@ -1,0 +1,200 @@
+1. Input a String S, and check its length and if the length is greater than 4,
+truncate the input String and output the result -
+Input: Ice Output: Ice
+Input:Icecream Output:Icec...
+
+
+function truncateString(inputString) {
+  if (inputString.length > 4) {
+    return inputString.substring(0, 4) + '...';
+  } else {
+    return inputString;
+  }
+}
+
+const input1 = "Ice";
+const input2 = "Icecream";
+
+const output1 = truncateString(input1);
+const output2 = truncateString(input2);
+
+console.log(output1); 
+console.log(output2); 
+
+
+
+
+2. Input a String S with multiple words, and remove whitespaces and
+output the result -
+Input: “Hii Boy” Output: “HiiBoy”
+
+function removeWhitespaces(inputString) {
+  return inputString.replace(/\s+/g, '');
+}
+
+const input = "Hii Boy";
+const output = removeWhitespaces(input);
+console.log(output); // Output: "HiiBoy"
+
+
+
+
+
+3. Input a String S with two words, and replace first word with second word
+and display the result -
+Input: “Hii Boy” Output: “Boy Hii”
+
+
+function replaceFirstWordWithSecond(inputString) {
+  const words = inputString.split(' ');
+
+  if (words.length >= 2) {
+    const temp = words[0];
+    words[0] = words[1];
+    words[1] = temp;
+
+    return words.join(' ');
+  } else {
+    return inputString;
+  }
+}
+const input = "Hii Boy";
+const output = replaceFirstWordWithSecond(input);
+console.log(output); // Output: "Boy Hii"
+
+
+
+
+
+4. Input a String S with a word, and replace character “a” with “x” and
+display the result -
+Input: “apple” Output: “xpple”
+
+
+function replaceAWithX(inputString) {
+  const result = inputString.replace(/a/g, 'x');
+  return result;
+}
+const input = "apple";
+const output = replaceAWithX(input);
+console.log(output);
+
+
+
+
+5. What string method can be used to convert string into array ?
+we can use the split() method to convert a string into an array in JavaScript. 
+
+
+
+6. What string method can be used to check the occurrence of a specified
+text in a string?
+we can use the indexOf() method or the includes() method to check the occurrence of a specified text in a string in JavaScript.
+
+
+
+7. How can you break a string to a newline in Javascript ?
+To break a string into a newline in JavaScript, you can use the newline character (\n) or a combination of the newline and carriage return characters (\r\n).
+
+
+8. Write a Javascript function to test whether the first character of a string
+is lowercase.
+
+function isFirstCharacterLowerCase(inputString) {
+  return inputString.charAt(0) === inputString.charAt(0).toLowerCase();
+}
+const string1 = "example";
+const string2 = "Example";
+
+console.log(isFirstCharacterLowerCase(string1)); 
+console.log(isFirstCharacterLowerCase(string2)); 
+
+
+
+
+9. Give a correct verdict to users input if he enters "yes", "YES","Yes" ,etc
+(any combination) using string methods.
+How will you handle that ?
+
+function checkUserInput(userInput) {
+  const lowerCaseInput = userInput.toLowerCase();
+
+  if (lowerCaseInput === "yes") {
+    return "User input is valid (yes)";
+  } else {
+    return "User input is not valid";
+  }
+}
+
+const userInput1 = "yes";
+const userInput2 = "YES";
+const userInput3 = "Yes";
+const userInput4 = "No";
+
+console.log(checkUserInput(userInput1)); 
+console.log(checkUserInput(userInput2)); 
+console.log(checkUserInput(userInput3)); 
+console.log(checkUserInput(userInput4)); 
+
+
+10. Given a String S, achieve following tasks
+a) Convert the String into upper case.
+b) Convert only the first character to uppercase.
+c) Convert the String into lower case.
+d) Break the string into two halves and swap them.
+e) Count the repeating characters.
+f) Reverse the string
+
+Convert the String into upper case:
+
+const inputString = "Hello, World!";
+const upperCaseString = inputString.toUpperCase();
+console.log(upperCaseString); // Output: "HELLO, WORLD!"
+
+
+Convert only the first character to uppercase:
+
+const inputString = "hello, world!";
+const firstCharUpperCase = inputString.charAt(0).toUpperCase() + inputString.slice(1);
+console.log(firstCharUpperCase); // Output: "Hello, world!"
+
+
+convert the String into lower case:
+
+const inputString = "Hello, World!";
+const lowerCaseString = inputString.toLowerCase();
+console.log(lowerCaseString); // Output: "hello, world!"
+
+
+Break the string into two halves and swap them:
+
+const inputString = "Hello, World!";
+const halfLength = Math.floor(inputString.length / 2);
+const firstHalf = inputString.slice(0, halfLength);
+const secondHalf = inputString.slice(halfLength);
+const swappedString = secondHalf + firstHalf;
+console.log(swappedString); // Output: "World!Hello, "
+
+
+Count the repeating characters:
+
+const inputString = "Hello, World!";
+const charCounts = {};
+for (const char of inputString) {
+  if (charCounts[char]) {
+    charCounts[char]++;
+  } else {
+    charCounts[char] = 1;
+  }
+}
+
+console.log(charCounts);
+ }
+
+
+Reverse the string:
+
+const inputString = "Hello, World!";
+const reversedString = inputString.split('').reverse().join('');
+console.log(reversedString); // Output: "!dlroW ,olleH"
+
