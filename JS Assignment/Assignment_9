@@ -1,0 +1,58 @@
+1. Carefully observe this example.
+a) Is the InnerFunction() a closure?
+b) What is output of this program
+
+function OuterFunction()
+{ var outerVariable = 100;
+function InnerFunction() {
+alert(outerVariable);
+}
+return InnerFunction;
+}
+var innerFunc = OuterFunction();
+innerFunc();
+
+a. Yes, InnerFunction is indeed a closure. A closure is a function that has access to its own scope, the scope of the outer function (OuterFunction in this case), and the global scope (if needed). In this code, InnerFunction has access to the outerVariable, which is defined in the outer function's scope (OuterFunction), making it a closure.
+
+b. The output of the program will be an alert dialog displaying the value of outerVariable, which is 100. This happens when you call innerFunc().
+
+
+
+2. What is the difference between a closure and a scope ?
+
+Scope:
+Scope refers to the region or context in your code where a variable or function is defined and where it can be accessed.
+There are typically three types of scope in most programming languages:
+Global Scope: Variables and functions defined in the global scope are accessible from anywhere in the code.
+Function Scope: Variables defined within a function are accessible only within that function (local scope).
+Block Scope (in languages like JavaScript and Python): Variables defined within a block (e.g., inside an if statement or a for loop) are accessible only within that block.
+The scope of a variable or function determines its visibility and lifetime.
+
+Closure:
+A closure is a function that has access to variables from its outer (enclosing) function's scope, even after the outer function has finished executing.
+Closures "enclose" or capture the variables from their surrounding scope, allowing them to retain their values and be used even outside their original context.
+Closures are often used to create private variables and data encapsulation. They enable the concept of data hiding and maintaining state in functional programming.
+Closures are a combination of a function and the lexical environment in which that function was declared.
+Closures are a way to implement and maintain state across function calls.
+
+
+
+
+3. What is a lexical scope and how is it related to closure?
+
+Lexical scope, also known as static scope or lexical scoping, is a fundamental concept in programming languages that deals with how variable names are resolved within nested functions based on their location in the source code. Lexical scoping determines which variables a function can access and where it looks for those variables when it is executed.
+
+
+
+
+4. Output of following closure ?
+for (var i = 0; i < 3; i++) {
+setTimeout(function log() {
+console.log(i); // What is logged?
+}, 1000);
+}
+
+
+0
+1
+2
